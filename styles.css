@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    width: 100%;
+    height: 110vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: rgb(255, 221, 227);
+}
+
+.content {
+    width: 90%;
+    height: inherit;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2vw;
+
+    background-color: aqua;
+}
+
+.etch-tools {
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#grid-container {
+    width: 60%;
+    height: 90%;
+
+    background-color: sandybrown;
+}
