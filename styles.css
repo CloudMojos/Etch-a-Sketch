@@ -43,16 +43,30 @@ body {
     justify-content: space-around;
 }
 
+.size-option {
+    width: 6vw;
+    height: 3vw;
+
+    border-radius: 15px;
+    margin: 1vw;
+}
+
 #grid-container {
     width: 42vw;
     height: 42vw;
     display: grid;
 
-    background-color: whitesmoke;
+    background-color: rgb(255, 198, 198);
+    border: 1vw solid rgb(255, 225, 225);
+    border-radius: 2%;
 }
 
 .etch-cell {
     float: left;
 
-    background-color: black;
+    background-color: rgb(245, 245, 245);
+}
+
+.grid-lines {
+    border: 0.01vw solid rgb(212, 211, 211);
 }
