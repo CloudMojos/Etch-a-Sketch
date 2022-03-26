@@ -46,6 +46,7 @@ body {
 #grid-container {
     width: 42vw;
     height: 42vw;
+    display: grid;
 
     background-color: whitesmoke;
 }
