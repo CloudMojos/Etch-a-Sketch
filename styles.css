@@ -57,7 +57,7 @@ body {
     display: grid;
 
     background-color: rgb(255, 198, 198);
-    border: 1vw solid rgb(255, 225, 225);
+    border: 0.5vw solid rgb(255, 225, 225);
     border-radius: 2%;
 }
 
@@ -65,6 +65,10 @@ body {
     float: left;
 
     background-color: rgb(245, 245, 245);
+}
+
+.etch-cell:hover {
+    background-color: black;
 }
 
 .grid-lines {
