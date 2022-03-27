@@ -2,7 +2,7 @@
 const etch_grid = document.getElementById("grid-container");
 const btn_size_option = document.querySelectorAll(".size-option");
 const paint = document.getElementById("paintbrush");
-let all_etch_cells = document.querySelectorAll('.etch-cell');
+let all_etch_cells;
 createGrid(8);
 
 // Creates grid based on size
@@ -17,7 +17,16 @@ function createGrid (size) {
         etch_grid.appendChild(etch_cell);
     }
     all_etch_cells = document.querySelectorAll('.etch-cell');
+    console.log("createGrid", all_etch_cells);
     //alert(etch_grid_height + ", " + cell_size);
+    console.log("creategrid", all_etch_cells);
+    all_etch_cells.forEach((cell) => {
+    console.log("cells.foreach");
+    cell.addEventListener('mousedown', () => {
+        console.log("I ran");
+        cell.setAttribute('style', `background-color: black;`);
+    })
+})
 }
 
 
@@ -31,16 +40,10 @@ function clearGrid() {
 }
 
 // Activate painting
-console.log(all_etch_cells);
-all_etch_cells.forEach((cell) => {
-    cell.addEventListener('mousedown', () => {
-        console.log("I ran");
-        cell.setAttribute('style', `background-color: black;`);
-    })
-})
 
 //
 btn_size_option.forEach((btn) => {
+    console.log("btn.foreach");
     btn.addEventListener("click", () => {
         all_etch_cells = document.querySelectorAll('.etch-cell');
         createGrid(btn.id);
