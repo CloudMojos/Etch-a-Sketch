@@ -1,10 +1,9 @@
 // Handles
 const etch_grid = document.getElementById("grid-container");
-const etch_grid_area = document.getElementById("grid-area");
 const btn_size_option = document.querySelectorAll(".size-option");
-const paint = document.getElementById("paintbrush");
+const btn_paint = document.getElementById("paintbrush");
 let all_etch_cells;
-let toggle = false;
+let isPainting = false;
 
 // Creates grid based on size
 function createGrid (size) {
@@ -34,19 +33,28 @@ function clearGrid() {
 
 // Activate painting
 function paintMode() {
-    all_etch_cells.forEach((cell) => {
-        console.log("cells.foreach");
-        etch_grid.addEventListener('mousedown', () => {
-            enableToggle();
-            cell.setAttribute('style', `background-color: black;`);
-        });
+    // enable the background painting
+    etch_grid.addEventListener('mousedown', (e) => {
+        console.log("enable painting");
+        isPainting = true;
+        if (e.target != etch_grid)
+        {
+            e.target.setAttribute('style', 'background-color: black');
+        }
     });
-}
+    // paint
+    all_etch_cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            if (isPainting)
+                cell.setAttribute('style', 'background-color: black');
+        })    
+    });
 
-function enableToggle() {
-    
-}
-
+    // disable the background painting
+    etch_grid.addEventListener('mouseup', () => {
+        isPainting = false;
+    });
+}   
 
 //
 btn_size_option.forEach((btn) => {
@@ -59,6 +67,7 @@ btn_size_option.forEach((btn) => {
 
 createGrid(8);
 
-paint.addEventListener("click", () => {
+// make it toggle. pass boolean parameter
+btn_paint.addEventListener("click", () => {
     paintMode();
 });
