@@ -1,9 +1,10 @@
 // Handles
 const etch_grid = document.getElementById("grid-container");
+const etch_grid_area = document.getElementById("grid-area");
 const btn_size_option = document.querySelectorAll(".size-option");
 const paint = document.getElementById("paintbrush");
 let all_etch_cells;
-createGrid(8);
+let toggle = false;
 
 // Creates grid based on size
 function createGrid (size) {
@@ -19,14 +20,6 @@ function createGrid (size) {
     all_etch_cells = document.querySelectorAll('.etch-cell');
     console.log("createGrid", all_etch_cells);
     //alert(etch_grid_height + ", " + cell_size);
-    console.log("creategrid", all_etch_cells);
-    all_etch_cells.forEach((cell) => {
-    console.log("cells.foreach");
-    cell.addEventListener('mousedown', () => {
-        console.log("I ran");
-        cell.setAttribute('style', `background-color: black;`);
-    })
-})
 }
 
 
@@ -40,6 +33,20 @@ function clearGrid() {
 }
 
 // Activate painting
+function paintMode() {
+    all_etch_cells.forEach((cell) => {
+        console.log("cells.foreach");
+        etch_grid.addEventListener('mousedown', () => {
+            enableToggle();
+            cell.setAttribute('style', `background-color: black;`);
+        });
+    });
+}
+
+function enableToggle() {
+    
+}
+
 
 //
 btn_size_option.forEach((btn) => {
@@ -49,3 +56,9 @@ btn_size_option.forEach((btn) => {
         createGrid(btn.id);
     })
 })
+
+createGrid(8);
+
+paint.addEventListener("click", () => {
+    paintMode();
+});
