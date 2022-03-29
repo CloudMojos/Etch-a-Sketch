@@ -52,8 +52,8 @@ body {
 }
 
 #grid-container {
-    width: 42vw;
-    height: 42vw;
+    width: 40vw;
+    height: 40vw;
     display: grid;
 
     background-color: rgb(255, 198, 198);
