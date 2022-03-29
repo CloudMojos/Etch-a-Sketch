@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -6,6 +8,11 @@
 
 header {
     margin-bottom: 2vh;
+}
+
+h1 {
+    font-family: Lobster;
+    font-size: 10vh;
 }
 
 body {
@@ -43,17 +50,21 @@ body {
     justify-content: space-around;
 }
 
-.size-option {
-    width: 6vw;
-    height: 3vw;
-
+button {
+    width: min-content;
+    height: min-content;
     border-radius: 15px;
+    padding: 1vw;
     margin: 1vw;
 }
 
+.size-option {
+    width: 8vw;
+}
+
 #grid-container {
-    width: 40vw;
-    height: 40vw;
+    width: 38vw;
+    height: 38vw;
     display: grid;
 
     background-color: rgb(255, 198, 198);
